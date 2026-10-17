@@ -196,3 +196,35 @@
   .booking-hero p{font-size:13px}
   .booking-visual>img{height:100px}
 }
+
+/* Reseñas y redes sociales */
+.reviews{background:var(--paper)}
+.reviews-summary{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 22px;margin:8px auto 30px;padding:16px 22px;max-width:760px;background:var(--cream);border:1px solid var(--line);border-radius:16px}
+.reviews-summary strong{display:block;font-size:14px}
+.reviews-summary small{display:block;color:var(--muted);font-size:12px}
+.stars{display:flex;gap:3px;color:var(--orange)}
+.stars svg{width:18px;height:18px}
+.stars.big svg{width:22px;height:22px}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.review-card{position:relative;display:flex;flex-direction:column;gap:12px;min-width:0;padding:24px;background:var(--cream);border:1px dashed #c9cfc3;border-radius:16px}
+.review-card p{margin:0;font-size:14px;color:var(--muted);font-style:italic}
+.sample-tag{align-self:flex-start;font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:#7a4a28;background:#fbeede;border:1px solid #efd3b4;border-radius:999px;padding:3px 9px}
+.review-author{display:flex;align-items:center;gap:12px;margin-top:auto}
+.review-author .avatar{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--sage);color:var(--green);flex:0 0 38px}
+.review-author .avatar svg{width:18px;height:18px}
+.review-author strong,.review-author small{display:block;line-height:1.35}
+.review-author strong{font-size:13px}
+.review-author small{font-size:11px;color:var(--muted)}
+.social{background:#f2efe6}
+.social-layout{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.social-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.social-tile{display:grid;place-items:center;aspect-ratio:1/1;border-radius:12px;background:var(--sage);color:var(--green);opacity:.85}
+.social-tile svg{width:30px;height:30px;opacity:.7}
+.social-tile:nth-child(2n){background:#f0d6c2;color:#8d573b}
+.social-note{margin:12px 0 0;font-size:12px;text-align:center}
+.button.is-pending{opacity:.55;cursor:not-allowed}
+.button.is-pending:hover{transform:none;background:transparent}
+@media(max-width:850px){
+  .review-grid{grid-template-columns:1fr}
+  .social-layout{grid-template-columns:1fr;gap:32px}
+}
