@@ -1,0 +1,23 @@
+CONFIGURAR EL FORMULARIO PARA QUE ENVÍE CORREOS A MIIGUELCAMUS@GMAIL.COM
+
+La web ya no utiliza FormSubmit. El envío se hace mediante Google Apps Script, desde tu propia cuenta de Google. Solo hay que configurar esto una vez.
+
+1. Entra tú mismo en https://script.google.com/ con la cuenta de Google que quieras usar para enviar los correos.
+2. Pulsa «Nuevo proyecto».
+3. Borra el código que aparezca y pega TODO el contenido del archivo google-apps-script/Code.gs (está en la carpeta hermana de esta web, dentro del ZIP).
+4. Guarda el proyecto con un nombre como «Puppy — solicitudes de cita».
+5. Pulsa «Implementar» > «Nueva implementación».
+6. En el engranaje/tipo de implementación, elige «Aplicación web».
+7. En «Ejecutar como», selecciona «Yo».
+8. En acceso, selecciona «Cualquier usuario» (la web necesita poder enviar solicitudes sin que el cliente inicie sesión).
+9. Pulsa «Implementar» y autoriza los permisos de envío de correo que Google solicite. Comprueba que estás en script.google.com y que la dirección es de Google antes de autorizar.
+10. Copia la URL de la aplicación web que termina en /exec.
+11. Abre contacto.html y busca esta parte: data-endpoint="PEGA_AQUI_LA_URL_DE_IMPLEMENTACION_DE_GOOGLE_APPS_SCRIPT"
+12. Sustituye PEGA_AQUI_LA_URL_DE_IMPLEMENTACION_DE_GOOGLE_APPS_SCRIPT por la URL /exec que acabas de copiar. No borres las comillas.
+13. Guarda los archivos y vuelve a publicar/subir la web con todos los archivos de la carpeta puppy-web-prototype.
+14. Haz una prueba con datos ficticios y comprueba que el correo llega a miiguelcamus@gmail.com (mira también Spam).
+
+IMPORTANTE
+- Hasta completar los pasos 1–13, el formulario no podrá enviar correos; no existe una forma segura de enviar emails desde una web estática sin configurar un servicio de envío.
+- No publiques ni compartas la URL de implementación en lugares innecesarios. Si modificas Code.gs, crea una nueva versión desde «Implementar» > «Gestionar implementaciones» > editar > nueva versión.
+- El formulario es una solicitud, no una reserva confirmada.

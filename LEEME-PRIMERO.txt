@@ -1,0 +1,5 @@
+Incluye:
+- puppy-web-prototype/: archivos de la web con el formulario preparado para Google Apps Script.
+- google-apps-script/Code.gs: backend que manda los datos de la cita a miiguelcamus@gmail.com.
+
+Sigue puppy-web-prototype/LEEME-CONFIGURACION-CORREO.txt. Hay que desplegar una vez el pequeño script desde tu propia cuenta de Google y pegar la URL /exec en contacto.html. No se usa FormSubmit.
