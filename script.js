@@ -58,3 +58,33 @@ if(appointmentForm){
     }
   });
 }
+
+// Badge "Abierto ahora" según el horario real (hora de Madrid)
+(function(){
+  const badges=document.querySelectorAll('[data-open-badge]');
+  if(!badges.length)return;
+  const hours={1:[570,810],2:[570,810],3:[570,810],4:[570,810],5:[570,810],6:[600,810]}; // minutos desde 0:00
+  const fmt=m=>Math.floor(m/60)+':'+String(m%60).padStart(2,'0');
+  const names=['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+  function now(){
+    const p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Madrid',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+    const get=t=>p.find(x=>x.type===t).value;
+    const day={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[get('weekday')];
+    return {day,min:parseInt(get('hour'),10)*60+parseInt(get('minute'),10)};
+  }
+  function state(){
+    const {day,min}=now(),h=hours[day];
+    if(h&&min>=h[0]&&min<h[1])return {open:true,text:'Abierto ahora · hasta las '+fmt(h[1])};
+    if(h&&min<h[0])return {open:false,text:'Cerrado ahora · abre hoy a las '+fmt(h[0])};
+    for(let i=1;i<=7;i++){
+      const d=(day+i)%7;
+      if(hours[d])return {open:false,text:'Cerrado ahora · abre '+(i===1?'mañana':'el '+names[d])+' a las '+fmt(hours[d][0])};
+    }
+    return {open:false,text:'Cerrado ahora'};
+  }
+  function paint(){
+    const s=state();
+    badges.forEach(b=>{b.textContent=s.text;b.classList.toggle('is-open',s.open);b.classList.toggle('is-closed',!s.open);});
+  }
+  paint();setInterval(paint,60000);
+})();

@@ -51,3 +51,45 @@
 .form-status.success { color: #176b42; font-weight: 600; }
 .form-status.error { color: #a32929; font-weight: 600; }
 .booking-submit:disabled { opacity: .7; cursor: wait; }
+
+/* ---- Mejoras: iconos, topline, WhatsApp, mapa, legal ---- */
+.brand-mark svg{width:24px;height:24px;color:var(--green)}
+.form-paw svg,.floating-icon svg{width:26px;height:26px}
+.floating-icon svg{width:34px;height:34px}
+.card-icon svg,.visual-caption>span svg,.booking-contact-note>span svg{width:20px;height:20px}
+.trust-item b svg{width:24px;height:24px}
+.booking-contact-note>span{flex:0 0 20px}
+.topline{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 12px}
+.topline a{text-decoration:underline;text-underline-offset:3px}
+.topline .sep{opacity:.5}
+.open-badge{display:inline-flex;align-items:center;gap:7px;font-weight:600}
+.open-badge:before{content:'';width:8px;height:8px;border-radius:50%;background:#9aa59d;flex:0 0 8px}
+.open-badge.is-open:before{background:#5fbf7f;box-shadow:0 0 0 3px #5fbf7f33}
+.open-badge.is-closed:before{background:#e0916b}
+.prototype-tag{right:auto;left:12px}
+.wa-float{position:fixed;z-index:9;right:16px;bottom:16px;display:inline-flex;align-items:center;gap:9px;padding:13px 18px;border-radius:999px;background:#2f8f5b;color:#fff;font-weight:600;font-size:13px;box-shadow:0 10px 30px #24362e33;transition:.2s}
+.wa-float:hover{background:#24724a;transform:translateY(-2px)}
+.wa-float svg{width:22px;height:22px}
+.mobile-cta{display:none}
+.map-section{background:#f2efe6}
+.map-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.map-hours{line-height:1.9}
+.map-frame{border-radius:18px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);background:var(--sage);min-height:380px}
+.map-frame iframe{width:100%;height:100%;min-height:380px;border:0;display:block}
+.legal{max-width:760px;padding:60px 0 80px}
+.legal h2{font-size:30px;margin:46px 0 14px}
+.legal h3{font-size:19px;margin:24px 0 8px}
+.legal p,.legal li{font-size:14px;line-height:1.75}
+.legal ul{color:var(--muted);padding-left:20px;margin:0 0 18px}
+.legal .todo{background:#fbeede;border:1px solid #efd3b4;border-radius:10px;padding:2px 6px;color:#7a4a28;font-weight:600}
+.privacy-check a{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:850px){
+  .map-layout{grid-template-columns:1fr;gap:32px}
+  .mobile-cta{display:flex;gap:10px}
+  .mobile-cta .button{flex:1;width:auto;padding-left:14px;padding-right:14px}
+  .wa-float{bottom:84px}
+  .wa-float span{display:none}
+  .wa-float{padding:14px}
+  .prototype-tag{bottom:72px}
+}
+@media(max-width:540px){.topline .sep{display:none}.topline{gap:2px 14px}}
