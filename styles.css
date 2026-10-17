@@ -93,3 +93,23 @@
   .prototype-tag{bottom:72px}
 }
 @media(max-width:540px){.topline .sep{display:none}.topline{gap:2px 14px}}
+
+/* Cabecera de contacto más compacta */
+@media(min-width:851px){
+  .booking-hero{padding:30px 0 26px}
+  .booking-hero-inner{gap:48px;grid-template-columns:1fr .6fr}
+  .booking-hero h1{font-size:clamp(30px,3.4vw,42px);margin:10px 0 10px}
+  .booking-hero p{font-size:14px;margin-bottom:0;max-width:480px}
+  .booking-visual{max-width:300px;padding:0 0 22px 18px}
+  .booking-visual>img{height:170px}
+  .booking-visual .visual-caption{padding:10px 14px;gap:10px}
+  .booking-visual .visual-caption>span{width:30px;height:30px}
+  .booking-visual .visual-caption>span svg{width:16px;height:16px}
+  .booking-visual .visual-caption small{font-size:11px}
+}
+@media(max-width:850px){
+  .booking-hero{padding:28px 0}
+  .booking-hero h1{font-size:34px;margin:10px 0}
+  .booking-hero p{margin-bottom:0}
+  .booking-visual>img{height:150px}
+}
