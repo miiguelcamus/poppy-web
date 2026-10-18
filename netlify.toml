@@ -1,0 +1,4 @@
+# Publica solo los archivos de la web (no el script de Google ni los LEEME).
+[build]
+  command = "mkdir -p dist && cp *.html styles.css script.js _headers dist/"
+  publish = "dist"
